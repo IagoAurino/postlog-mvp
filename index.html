@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostLog - Passagem de Turno</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <main class="card card-wide">
+        
+        <header class="card-header">
+            <svg class="icone-avatar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <h1>PostLog - Passagem de Turno</h1>
+        </header>
+
+        <form action="#" method="POST" class="form-postlog">
+    
+            <!-- 1. Controlador -->
+            <div class="input-group">
+                <label for="controlador">CONTROLADOR ASSUMINDO</label>
+                <input type="text" id="controlador" name="controlador" placeholder="Digite seu nome" required>
+            </div>
+
+            <!-- 2. Checklist -->
+            <fieldset class="checklist-group">
+                <legend>CHECKLIST DE MATERIAIS</legend>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="radio-ht" name="materiais" value="radio-ht">
+                    <label for="radio-ht">Rádios HT / Bases / Fontes</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="chaves" name="materiais" value="chaves">
+                    <label for="chaves">Claviculário / Chaves</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="celular" name="materiais" value="celular">
+                    <label for="celular">Celular Corporativo / Carregador</label>
+                </div>
+            </fieldset>
+
+            <!-- 3. Relatório -->
+            <div class="input-group">
+                <label for="relatorio">RELATÓRIO / ALTERAÇÕES DO PLANTÃO</label>
+                <textarea id="relatorio" name="relatorio" placeholder="Digite seu Relatório" rows="3"></textarea>
+            </div>
+
+            <!-- 4. Registro de Avaria -->
+            <div class="upload-group">
+                <label for="avaria">REGISTRAR AVARIA (CÂMERA / ARQUIVO)</label>
+                
+                <label for="avaria" class="upload-area">
+                    <span class="upload-text">Tirar foto ou anexar imagem</span>
+                    
+                    <span class="upload-icons">
+                        <img src="assets/Vector.svg" alt="" aria-hidden="true">
+                        <img src="assets/energy-icons_camera-48-bold.svg" alt="" aria-hidden="true">
+                    </span>
+
+                    <span class="btn-remover" style="display: none;" title="Remover ficheiro">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </span>
+                    
+                    <input type="file" id="avaria" name="avaria" accept="image/*, video/*, .pdf, .doc, .docx" class="sr-only">
+                </label>
+            </div>
+
+            <!-- 5. Botão de Submissão -->
+            <button type="submit" class="btn-passagem">REGISTRAR PASSAGEM</button>
+        
+        </form>
+    </main>
+
+    <div id="modal-sucesso" class="modal-overlay">
+        <div class="modal-glass">
+            <!-- Ícone Animado de Check (Verde) -->
+            <svg class="icone-sucesso" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#5AB9A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <h2>Passagem Registada!</h2>
+            <p>O plantão foi passado com sucesso e as alterações foram guardadas no sistema.</p>
+            <button type="button" id="btn-fechar-modal" class="btn-passagem">CONTINUAR</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,544 @@
+/* Limpeza de margens e aplicação da fonte Inter em tudo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================================
+   1. FUNDO GLOBAL (MESH GRADIENT ESCURO)
+   ========================================= */
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 0 16px; /* ALTERADO: Zero em cima e em baixo, 16px nas laterais */
+    
+    color: #ffffff;
+    background-color: #020617;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(90, 185, 168, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.8) 0px, transparent 50%),
+        radial-gradient(at 50% 0%, rgba(13, 38, 35, 0.4) 0px, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* =========================================
+   2. O CARTÃO (DARK GLASSMORPHISM)
+   ========================================= */
+.card, .glass-card {
+    width: 100%; 
+    max-width: 420px;
+    margin: 0;
+    
+    padding: 32px; /* ALTERADO: de 40px para 32px */
+    
+    border-radius: 16px;
+    
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+.card-wide {
+    max-width: 480px;
+}
+
+/* =========================================
+   3. CABEÇALHO (ÍCONE E TÍTULO)
+   ========================================= */
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    
+    margin-bottom: 24px; /* ALTERADO: de 32px para 24px */
+}
+
+.icone-avatar {
+    width: 48px; 
+    height: 48px;
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+.card-header h1 {
+    color: #FFFFFF; 
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   4. ESPAÇAMENTO GERAL DO FORMULÁRIO
+   ========================================= */
+.form-postlog {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 12px; /* ALTERADO: de 16px para 12px */
+}
+
+/* =========================================
+   5. CAMPOS DE FORMULÁRIO (INPUTS)
+   ========================================= */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.3); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 8px;
+    padding: 0 16px;
+    color: #FFFFFF;
+    font-size: 15px;
+    outline: none; 
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #5AB9A8;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 3px rgba(90, 185, 168, 0.2);
+}
+
+/* Força a cor do texto a continuar branca no preenchimento automático do navegador */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: #FFFFFF !important; 
+    transition: background-color 5000s ease-in-out 0s; 
+}
+
+/* =========================================
+   6. TOGGLE DE SENHA (OLHO)
+   ========================================= */
+.senha-wrapper, .password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.senha-wrapper input, .password-container input {
+    padding-right: 48px; 
+}
+
+.btn-eye, .olho-senha {
+    position: absolute;
+    right: 14px; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    padding: 0;
+}
+
+.btn-eye:hover, .olho-senha:hover {
+    color: #ffffff; 
+}
+
+/* =========================================
+   7. TEXTAREA (RELATÓRIO)
+   ========================================= */
+.input-group textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: #FFFFFF;
+    font-size: 15px;
+    outline: none;
+    resize: vertical; 
+    overflow-y: auto; 
+    transition: all 0.3s ease;
+    min-height: 80px;
+}
+
+.input-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================
+   8. ESTILIZAÇÃO DA BARRA DE ROLAGEM 
+   ========================================= */
+.input-group textarea::-webkit-scrollbar {
+    width: 6px; 
+    background-color: transparent;
+}
+.input-group textarea::-webkit-scrollbar-button {
+    display: none !important; 
+    width: 0 !important;
+    height: 0 !important;
+}
+.input-group textarea::-webkit-scrollbar-track {
+    background: transparent !important; 
+    margin-block: 8px; 
+}
+.input-group textarea::-webkit-scrollbar-thumb {
+    background-color: transparent; 
+    border-radius: 10px; 
+    border: 2px solid transparent; 
+    background-clip: padding-box;
+}
+.input-group textarea.em-movimento::-webkit-scrollbar-thumb,
+.input-group textarea:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3); 
+}
+.input-group textarea::-webkit-scrollbar-thumb:hover {
+    background-color: #5AB9A8; 
+}
+
+/* =========================================
+   9. CHECKLIST (FIELDSET E LEGEND)
+   ========================================= */
+.checklist-group {
+    background: rgba(0, 0, 0, 0.15); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.checklist-group legend {
+    font-size: 11px;
+    font-weight: 600;
+    color: #94a3b8;
+    padding: 0 8px;
+    letter-spacing: 1px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 12px; 
+}
+
+.checkbox-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none; 
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-item input[type="checkbox"]:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.checkbox-item input[type="checkbox"]:checked {
+    background-color: #5AB9A8;
+    border-color: #5AB9A8;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: check-pop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.checkbox-item input[type="checkbox"]:focus-visible {
+    box-shadow: 0 0 0 2px rgba(90, 185, 168, 0.4);
+}
+
+.checkbox-item label {
+    color: #e2e8f0;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    user-select: none; 
+}
+
+@keyframes check-pop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* =========================================
+   10. ÁREA DE AVARIA (CAIXA PARA ARQUIVOS)
+   ========================================= */
+.upload-group > label:first-of-type {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.upload-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 54px; 
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px dashed rgba(255, 255, 255, 0.25); 
+    border-radius: 8px;
+    padding: 0 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+    background: rgba(0, 0, 0, 0.4); 
+    border-color: #5AB9A8;
+}
+
+.upload-text {
+    font-size: 14px;
+    color: #94a3b8;
+    flex: 1;              
+    min-width: 0;         
+    white-space: nowrap;      
+    overflow: hidden;         
+    text-overflow: ellipsis;  
+    padding-right: 16px;      
+}
+
+.upload-icons {
+    display: flex;
+    gap: 12px; 
+    opacity: 0.8; 
+    flex-shrink: 0; 
+}
+
+.upload-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.btn-remover {
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+    flex-shrink: 0;
+    z-index: 10; 
+}
+
+.btn-remover:hover {
+    color: #ff4a4a; 
+}
+
+/* =========================================
+   11. BOTÕES FINAIS (LOGIN / PASSAGEM)
+   ========================================= */
+.btn-login, .btn-passagem {
+    width: 100%;
+    height: 48px;
+    background-color: #5AB9A8;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px; 
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover, .btn-passagem:hover {
+    background-color: #4ca393;
+    transform: translateY(-2px); 
+}
+
+.btn-login:active, .btn-passagem:active {
+    transform: translateY(0); 
+}
+
+.icone-btn {
+    margin-left: 8px;
+}
+
+/* =========================================
+   12. OTIMIZAÇÃO MOBILE (ENCAIXE SEM SCROLL)
+   ========================================= */
+@media (max-width: 500px) {
+    
+    /* O body já protege as bordas, então o cartão usa 100% da área segura sem margens */
+    .card, .glass-card {
+        width: 100%; 
+        margin: 0; 
+        padding: 24px 20px; /* Reduz o espaço interno para caber sem scroll */
+    }
+
+    /* Aproxima o título e o ícone */
+    .card-header {
+        margin-bottom: 16px;
+    }
+
+    .icone-avatar {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 8px;
+    }
+
+    .card-header h1 {
+        font-size: 18px;
+    }
+
+    /* Reduz o espaço (gap) entre os campos do formulário de 16px para 10px */
+    .form-postlog {
+        gap: 10px; 
+    }
+
+    /* Reduz a altura dos campos de entrada e do botão final de 48px para 42px */
+    .input-group input, 
+    .btn-login, 
+    .btn-passagem {
+        height: 42px;
+    }
+
+    /* Deixa a área de upload de fotos ligeiramente mais fina */
+    .upload-area {
+        height: 44px;
+        padding: 0 12px;
+    }
+
+    /* Diminui a altura mínima do textarea do relatório */
+    .input-group textarea {
+        min-height: 56px; 
+        padding: 10px 14px;
+    }
+
+    /* Compacta o checklist para não roubar altura desnecessária */
+    .checklist-group {
+        padding: 10px 12px;
+    }
+
+    .checkbox-item {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .checkbox-item label {
+        font-size: 13px; /* Fonte levemente menor para os checkboxes */
+    }
+}
+
+/* =========================================
+   13. MODAL DE SUCESSO (FEEDBACK VISUAL)
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(2, 6, 23, 0.8); /* Fundo escuro semi-transparente */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    
+    /* Oculto por padrão com transição suave */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Classe ativada pelo JS para mostrar o modal */
+.modal-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-glass {
+    width: calc(100% - 32px);
+    max-width: 360px;
+    padding: 32px;
+    border-radius: 16px;
+    text-align: center;
+    
+    /* O mesmo Dark Glassmorphism do cartão */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    
+    /* Efeito de deslizar para cima ao aparecer */
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.ativo .modal-glass {
+    transform: translateY(0);
+}
+
+.icone-sucesso {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+}
+
+.modal-glass h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.modal-glass p {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
