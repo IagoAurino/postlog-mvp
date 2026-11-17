@@ -1,0 +1,24 @@
+{
+  "name": "postlog",
+  "version": "1.0.0",
+  "description": "O PostLog é uma aplicação web desenvolvida para modernizar a passagem de turno na segurança patrimonial e controle de acesso. Substituindo o tradicional livro de ocorrências de papel, o sistema oferece checklists digitais, registro de ocorrências e autenticação segura, trazendo mais agilidade e dignidade para a guarita (alinhado ao ODS 8 - Trabalho Decente).",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IagoAurino/postlog-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/IagoAurino/postlog-mvp/issues"
+  },
+  "homepage": "https://github.com/IagoAurino/postlog-mvp#readme",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
