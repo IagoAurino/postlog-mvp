@@ -1,3 +1,16 @@
+// Melhoria de Segurança: Validação de campos vazios e limite de caracteres
+function validarCredenciais(email, senha) {
+    if (!email || !senha) {
+        console.error("Erro de segurança: Tentativa de login com campos nulos.");
+        return false;
+    }
+    if (email.length > 100) {
+        console.warn("Aviso: Email excede o limite de caracteres permitido.");
+        return false;
+    }
+    return true;
+}
+
 // =========================================
 // LÓGICA EXCLUSIVA DO LOGIN
 // =========================================
